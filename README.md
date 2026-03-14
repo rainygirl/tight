@@ -1,15 +1,25 @@
 # Tight
 
 🇰🇷 채널, DM, 스레드, 검색이 지원되는 오픈소스 설치형 협업 채팅 도구
+
 🇺🇸 Open-source self-hosted team chat with channels, DMs, threads, and search
+
 🇪🇸 Chat colaborativo autoalojado de código abierto con canales, MD, hilos y búsqueda
+
 🇫🇷 Outil de chat collaboratif open source auto-hébergé avec salons, MP, fils et recherche
+
 🇯🇵 チャンネル・DM・スレッド・検索対応のオープンソース自己ホスト型チャットツール
+
 🇨🇳 支持频道、私信、话题和搜索的开源自托管协作聊天工具
+
 🇹🇼 支援頻道、私訊、討論串與搜尋的開源自架協作聊天工具
+
 🇭🇰 支援頻道、私信、討論串同搜尋嘅開源自架協作聊天工具
+
 🇻🇳 Công cụ chat cộng tác tự lưu trữ mã nguồn mở với kênh, DM, chuỗi hội thoại và tìm kiếm
+
 🇮🇩 Alat obrolan kolaborasi open source yang dihosting sendiri dengan saluran, DM, utas, dan pencarian
+
 
 **Supported languages:** 🇰🇷 한국어 · 🇺🇸 English · 🇪🇸 Español · 🇫🇷 Français · 🇯🇵 日本語 · 🇨🇳 中文（简体）· 🇹🇼 中文（繁體）· 🇭🇰 廣東話 · 🇻🇳 Tiếng Việt · 🇮🇩 Bahasa Indonesia
 
