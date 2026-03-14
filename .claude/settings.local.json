@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node --version && npm --version 2>/dev/null)",
+      "Bash(npx vite:*)",
+      "Bash(node -e \"\nconst fs = require\\('fs'\\);\nconst content = fs.readFileSync\\('.env', 'utf8'\\);\nconst lines = content.split\\('\\\\n'\\).filter\\(l => l.startsWith\\('GOOGLE_'\\)\\);\nlines.forEach\\(l => {\n  const [key, ...rest] = l.split\\('='\\);\n  const val = rest.join\\('='\\).trim\\(\\);\n  console.log\\(key + '=' + \\(val ? '[설정됨, 길이:' + val.length + ']' : '[비어있음]'\\)\\);\n}\\);\n\")",
+      "Bash(npx tsx:*)",
+      "Bash(npx tsc:*)",
+      "Bash(find ~/Workspace/restaurant.coroke.net -type f \\\\\\( -name \"*.ts\" -o -name \"*.tsx\" \\\\\\) 2>/dev/null | head -20)",
+      "Bash(npx svelte-check:*)",
+      "Bash(ls /Users/rainygirl/Workspace/tight/src/routes/api/channels/\\\\[id\\\\]/members/ && ls /Users/rainygirl/Workspace/tight/src/routes/api/threads/)",
+      "Bash(npm run:*)"
+    ]
+  }
+}

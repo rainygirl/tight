@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Background -->
+  <rect width="64" height="64" rx="14" fill="#1264a3"/>
+
+  <!--
+    밧줄 매듭 (Figure-8 / 8자 매듭)
+    밧줄이 교차하며 묶인 모양: "tight"의 의미를 시각화
+  -->
+
+  <!-- 밧줄 그림자 (깊이감) -->
+  <g fill="none" stroke="#0a4a82" stroke-linecap="round" stroke-linejoin="round" stroke-width="6">
+    <path d="M 22 18 C 8 18, 8 42, 22 42 C 31 42, 32 36, 32 32"/>
+    <path d="M 42 46 C 56 46, 56 22, 42 22 C 33 22, 32 28, 32 32"/>
+  </g>
+
+  <!-- 밧줄 본체 (굵은 선) -->
+  <g fill="none" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" stroke-width="5">
+    <!-- 왼쪽 루프: 위 꼬리에서 시작해 원을 그리고 중심으로 -->
+    <path d="M 22 18 C 8 18, 8 42, 22 42 C 31 42, 32 36, 32 32"/>
+    <!-- 오른쪽 루프: 아래 꼬리에서 시작해 원을 그리고 중심으로 -->
+    <path d="M 42 46 C 56 46, 56 22, 42 22 C 33 22, 32 28, 32 32"/>
+  </g>
+
+  <!-- 매듭 교차점 (앞에 오는 부분: 밧줄의 입체감) -->
+  <g fill="none" stroke="#c8e6fa" stroke-linecap="round" stroke-width="5">
+    <!-- 왼쪽 루프의 꼬리 (위쪽) -->
+    <line x1="22" y1="18" x2="18" y2="11"/>
+    <!-- 오른쪽 루프의 꼬리 (아래쪽) -->
+    <line x1="42" y1="46" x2="46" y2="53"/>
+  </g>
+
+  <!-- 꼬리 끝부분 매듭 마감 (프레이드 로프 끝처럼) -->
+  <circle cx="18" cy="11" r="3" fill="#7ec8f7" stroke="#ffffff" stroke-width="1.5"/>
+  <circle cx="46" cy="53" r="3" fill="#7ec8f7" stroke="#ffffff" stroke-width="1.5"/>
+</svg>
