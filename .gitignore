@@ -1,0 +1,18 @@
+# Dependencies
+node_modules/
+
+# Build output
+build/
+.svelte-kit/
+
+# Environment
+.env
+.env.local
+
+# Database (use tight.db.sample for the committed sample)
+tight.db
+tight.db-shm
+tight.db-wal
+
+# OS
+.DS_Store
