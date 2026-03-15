@@ -3,8 +3,8 @@ import Google from '@auth/sveltekit/providers/google';
 import { env } from '$env/dynamic/private';
 const { GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET } = env;
 import { db } from '$lib/db';
-import { users } from '$lib/db/schema';
-import { eq } from 'drizzle-orm';
+import { users, workspaces, workspaceMembers, channels, channelMembers } from '$lib/db/schema';
+import { eq, and } from 'drizzle-orm';
 import { uploadAvatarToR2 } from '$lib/r2';
 
 export const { handle, signIn, signOut } = SvelteKitAuth({
@@ -44,6 +44,25 @@ export const { handle, signIn, signOut } = SvelteKitAuth({
 				} else if (existing.avatarSource !== 'custom' && existing.avatarUrl?.includes('googleusercontent.com')) {
 					const avatarUrl = user.image ? await uploadAvatarToR2(user.image) : existing.avatarUrl;
 					db.update(users).set({ avatarUrl }).where(eq(users.id, existing.id)).run();
+				}
+				// 데모 모드: 'demo' 슬러그 워크스페이스에 자동 가입
+				if (env.DEMO_MODE === 'true') {
+					const userId = existing?.id ?? id;
+					const demoWorkspace = db.select().from(workspaces).where(eq(workspaces.slug, 'demo')).get();
+					if (demoWorkspace) {
+						const isMember = db.select().from(workspaceMembers)
+							.where(and(eq(workspaceMembers.workspaceId, demoWorkspace.id), eq(workspaceMembers.userId, userId)))
+							.get();
+						if (!isMember) {
+							db.insert(workspaceMembers).values({ workspaceId: demoWorkspace.id, userId, role: 'member' }).run();
+							const publicChannels = db.select().from(channels)
+								.where(and(eq(channels.workspaceId, demoWorkspace.id), eq(channels.isPrivate, false), eq(channels.isDm, false)))
+								.all();
+							for (const ch of publicChannels) {
+								db.insert(channelMembers).values({ channelId: ch.id, userId, role: 'member' }).run();
+							}
+						}
+					}
 				}
 			} catch (err) {
 				console.error('[auth] signIn DB error:', err);

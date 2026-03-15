@@ -112,7 +112,7 @@ const workspaceId = uid();
 db.prepare(`
   INSERT INTO workspaces (id, name, slug, owner_id, created_at)
   VALUES (?, ?, ?, ?, ?)
-`).run(workspaceId, 'Acme Corp', 'acme', alice, ts(30));
+`).run(workspaceId, 'Demo', 'demo', alice, ts(30));
 
 const insertMember = db.prepare(`
   INSERT INTO workspace_members (workspace_id, user_id, role) VALUES (?, ?, ?)
