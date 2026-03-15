@@ -187,9 +187,36 @@ npm start
 
 `npm start` runs `node --env-file=.env build/index.js`. Place your `.env` in the project root (same directory where you run the command).
 
-> **Note:** All environment variables are loaded at runtime via `--env-file`. Nothing from `.env` is compiled into the build output, so the same build can be deployed to different environments by swapping `.env`.
+> **Note:** `VITE_WS_URL` is a Vite variable baked into the client bundle **at build time**, not at runtime. Set it to your production WebSocket URL before running `npm run build`.
 
-The WebSocket server attaches to the HTTP server and serves `/ws` in production (no separate port needed).
+---
+
+## Ports and WebSocket
+
+| Mode | HTTP | WebSocket |
+|---|---|---|
+| Development | Vite on `:5173` | Standalone on `WS_PORT` (default **3001**) |
+| Production | Node.js on `PORT` (default **3000**) | Same port, path `/ws` |
+
+In production, the WebSocket server attaches to the HTTP server — no separate port is needed. The client connects to `/ws` on the same origin.
+
+**Environment variables that affect ports:**
+
+| Variable | Default | Effect |
+|---|---|---|
+| `PORT` | `3000` | HTTP server port (production) |
+| `WS_PORT` | `3001` | WebSocket port (development only) |
+| `VITE_WS_URL` | `ws://localhost:3001` | WebSocket URL baked into the client bundle at build time |
+
+For production, set `VITE_WS_URL` to your public WebSocket URL **before building**:
+
+```env
+VITE_WS_URL=ws://your-domain.com/ws
+```
+
+---
+
+> **Auth.js note:** `X-Forwarded-Proto` and `X-Forwarded-Host` are required for session cookies to work correctly behind a proxy. Without them, Auth.js may construct the wrong callback URL and redirect back to the login screen after OAuth.
 
 ---
 
