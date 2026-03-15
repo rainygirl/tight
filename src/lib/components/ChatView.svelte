@@ -29,7 +29,8 @@
 		channels = [],
 		workspaceSlug,
 		channelIsPrivate = false,
-		channelIsOwner = false
+		channelIsOwner = false,
+		uploadDisabled = false
 	}: {
 		channelId: string;
 		channelName: string;
@@ -42,6 +43,7 @@
 		workspaceSlug: string;
 		channelIsPrivate?: boolean;
 		channelIsOwner?: boolean;
+		uploadDisabled?: boolean;
 	} = $props();
 
 	let messages = $state<MessagePayload[]>([...initialMessages as MessagePayload[]]);
@@ -207,7 +209,7 @@
 			{/if}
 
 			<div onkeydown={handleTyping} role="none">
-				<MessageInput channelName={isDm ? otherUser?.name ?? 'DM' : channelName} onSend={handleSend} {members} {channels} {workspaceSlug} />
+				<MessageInput channelName={isDm ? otherUser?.name ?? 'DM' : channelName} onSend={handleSend} {members} {channels} {workspaceSlug} {uploadDisabled} />
 			</div>
 		</div>
 
@@ -223,6 +225,7 @@
 				{userId}
 				{members}
 				{channels}
+				{uploadDisabled}
 				onClose={() => selectedThread = null}
 			/>
 		{/if}

@@ -15,4 +15,5 @@
 	workspaceSlug={data.workspace.slug}
 	channelIsPrivate={data.channel.isPrivate}
 	channelIsOwner={data.channel.isOwner}
+	uploadDisabled={data.uploadDisabled}
 />

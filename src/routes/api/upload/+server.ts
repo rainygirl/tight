@@ -14,6 +14,8 @@ const r2 = new S3Client({
 });
 
 export const POST: RequestHandler = async ({ request, locals }) => {
+	if (env.DISABLE_UPLOAD === 'true') error(403, 'Upload disabled');
+
 	const session = await locals.auth();
 	if (!session?.user) error(401, 'Unauthorized');
 

@@ -11,13 +11,15 @@
 		onSend,
 		members = [],
 		channels = [],
-		workspaceSlug = ''
+		workspaceSlug = '',
+		uploadDisabled = false
 	}: {
 		channelName: string;
 		onSend: (body: string, imageUrl?: string) => void;
 		members?: Member[];
 		channels?: Channel[];
 		workspaceSlug?: string;
+		uploadDisabled?: boolean;
 	} = $props();
 
 	let uploading = $state(false);
@@ -612,7 +614,7 @@
 				<span>{t('input.link')}</span>
 			</button>
 			<div class="toolbar-divider"></div>
-			<button class="toolbar-btn" onmousedown={(e) => { e.preventDefault(); fileInput.click(); }} disabled={uploading} title={t('input.fileTitle')}>
+			<button class="toolbar-btn" onmousedown={(e) => { e.preventDefault(); if (uploadDisabled) { alert(t('input.uploadDisabled')); return; } fileInput.click(); }} disabled={uploading} title={t('input.fileTitle')}>
 				{#if uploading}
 					<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 						<circle cx="12" cy="12" r="10"/>

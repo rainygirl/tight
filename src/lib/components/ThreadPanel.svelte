@@ -15,6 +15,7 @@
 		userId,
 		members = [],
 		channels = [],
+		uploadDisabled = false,
 		onClose
 	}: {
 		parentMessage: MessagePayload;
@@ -22,6 +23,7 @@
 		userId: string;
 		members?: Member[];
 		channels?: Channel[];
+		uploadDisabled?: boolean;
 		onClose: () => void;
 	} = $props();
 
@@ -111,7 +113,7 @@
 	</div>
 
 	<div class="thread-input">
-		<MessageInput channelName={t('thread.title')} onSend={handleSend} {members} {channels} {workspaceSlug} />
+		<MessageInput channelName={t('thread.title')} onSend={handleSend} {members} {channels} {workspaceSlug} {uploadDisabled} />
 	</div>
 </div>
 

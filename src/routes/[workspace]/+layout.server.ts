@@ -1,4 +1,5 @@
 import { redirect, error } from '@sveltejs/kit';
+import { env } from '$env/dynamic/private';
 import { db } from '$lib/db';
 import { workspaces, workspaceMembers, channels, channelMembers, users } from '$lib/db/schema';
 import { eq, and, ne } from 'drizzle-orm';
@@ -95,6 +96,7 @@ export const load: LayoutServerLoad = async (event) => {
 		dms,
 		members,
 		userId,
-		user: session.user
+		user: session.user,
+		uploadDisabled: env.DISABLE_UPLOAD === 'true'
 	};
 };

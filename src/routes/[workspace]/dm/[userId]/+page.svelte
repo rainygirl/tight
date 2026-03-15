@@ -22,4 +22,5 @@
 	members={data.members ?? []}
 	channels={data.channels ?? []}
 	workspaceSlug={data.workspace.slug}
+	uploadDisabled={data.uploadDisabled}
 />
