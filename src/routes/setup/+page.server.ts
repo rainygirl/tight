@@ -21,7 +21,9 @@ function slugify(str: string) {
 export const load: PageServerLoad = async (event) => {
 	const session = await event.locals.auth();
 	if (!session?.user) redirect(302, '/login');
+
 	if (env.DEMO_MODE === 'true') redirect(302, '/');
+
 	return {};
 };
 

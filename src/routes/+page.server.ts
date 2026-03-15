@@ -33,7 +33,13 @@ export const load: PageServerLoad = async (event) => {
 				membership = { workspaceId: demoWorkspace.id };
 			}
 		}
-		if (!membership) redirect(302, '/setup');
+		if (!membership) {
+			if (env.DEMO_MODE === 'true') {
+				// demo 워크스페이스가 없는 설정 오류 — setup으로 보내지 않음
+				throw new Error('DEMO_MODE is enabled but no "demo" workspace exists. Run: npm run db:seed-sample');
+			}
+			redirect(302, '/setup');
+		}
 	}
 
 	const workspace = db
