@@ -185,7 +185,7 @@ npm run build
 npm start
 ```
 
-`npm start` runs `node --env-file=.env build/index.js`. Place your `.env` in the project root (same directory where you run the command).
+`npm start` runs `node --env-file=.env --import tsx/esm server.ts`. This starts the custom server (`server.ts`) which loads the built SvelteKit handler **and** attaches the WebSocket server — both on the same port. Place your `.env` in the project root.
 
 > **Note:** `VITE_WS_URL` is a Vite variable baked into the client bundle **at build time**, not at runtime. Set it to your production WebSocket URL before running `npm run build`.
 
