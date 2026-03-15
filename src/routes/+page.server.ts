@@ -1,7 +1,7 @@
 import { redirect } from '@sveltejs/kit';
 import { env } from '$env/dynamic/private';
 import { db } from '$lib/db';
-import { workspaces, workspaceMembers, channels, channelMembers } from '$lib/db/schema';
+import { workspaces, workspaceMembers, channels, channelMembers, users } from '$lib/db/schema';
 import { eq, and } from 'drizzle-orm';
 import type { PageServerLoad } from './$types';
 
@@ -10,6 +10,10 @@ export const load: PageServerLoad = async (event) => {
 	if (!session?.user) redirect(302, '/login');
 
 	const userId = session.user.id!;
+
+	// 세션은 있지만 DB에 유저가 없으면 (DB 초기화 등) 재로그인
+	const dbUser = db.select({ id: users.id }).from(users).where(eq(users.id, userId)).get();
+	if (!dbUser) redirect(302, '/login');
 
 	// Find first workspace the user belongs to
 	let membership = db
