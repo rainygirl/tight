@@ -1,6 +1,7 @@
 import { SvelteKitAuth } from '@auth/sveltekit';
 import Google from '@auth/sveltekit/providers/google';
-import { GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET } from '$env/static/private';
+import { env } from '$env/dynamic/private';
+const { GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET } = env;
 import { db } from '$lib/db';
 import { users } from '$lib/db/schema';
 import { eq } from 'drizzle-orm';

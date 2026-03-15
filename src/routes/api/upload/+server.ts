@@ -1,12 +1,7 @@
 import { json, error } from '@sveltejs/kit';
 import { S3Client, PutObjectCommand } from '@aws-sdk/client-s3';
-import {
-	R2_ACCOUNT_ID,
-	R2_ACCESS_KEY_ID,
-	R2_SECRET_ACCESS_KEY,
-	R2_BUCKET_NAME,
-	R2_PUBLIC_URL
-} from '$env/static/private';
+import { env } from '$env/dynamic/private';
+const { R2_ACCOUNT_ID, R2_ACCESS_KEY_ID, R2_SECRET_ACCESS_KEY, R2_BUCKET_NAME, R2_PUBLIC_URL } = env;
 import type { RequestHandler } from './$types';
 
 const r2 = new S3Client({
