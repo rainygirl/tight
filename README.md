@@ -99,7 +99,7 @@ R2_BUCKET_NAME=tight-uploads
 R2_PUBLIC_URL=https://pub-xxxx.r2.dev
 
 # WebSocket
-VITE_WS_URL=ws://localhost:3001
+VITE_WS_URL=wss://localhost:3001
 WS_PORT=3001
 PORT=3000
 ```
