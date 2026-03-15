@@ -326,14 +326,23 @@ When a user uploads a custom avatar, `avatarSource` is set to `'custom'` in the 
 ## Contributing
 
 🇰🇷 기여를 환영합니다. 아이디어가 담긴 코드라면 새 기능, 개선, 버그 수정, 실험 무엇이든 자유롭게 Pull Request를 열어주세요. 별도의 가이드라인은 없습니다.
+
 🇺🇸 Contributions are welcome. Feel free to open a pull request with any idea — new features, improvements, bug fixes, or experiments. There are no strict guidelines; if you have code that embodies an idea, propose it.
+
 🇪🇸 Las contribuciones son bienvenidas. Abre un pull request con cualquier idea — nuevas funciones, mejoras, correcciones o experimentos. No hay pautas estrictas; si tienes código con una idea, proponla.
+
 🇫🇷 Les contributions sont les bienvenues. Ouvrez librement une pull request avec n'importe quelle idée — nouvelles fonctionnalités, améliorations, corrections ou expériences. Aucune règle stricte ; si votre code porte une idée, proposez-la.
+
 🇯🇵 コントリビューションを歓迎します。新機能・改善・バグ修正・実験など、アイデアを持つコードであれば自由にPull Requestを開いてください。厳格なガイドラインはありません。
+
 🇨🇳 欢迎贡献。无论是新功能、改进、修复还是实验，只要代码中包含想法，均可自由提交 Pull Request。没有严格的规范。
+
 🇹🇼 歡迎貢獻。無論是新功能、改進、修復或實驗，只要程式碼中包含想法，均可自由提交 Pull Request。沒有嚴格的規範。
+
 🇭🇰 歡迎貢獻。無論係新功能、改進、修復定係實驗，只要代碼入面有想法，都可以自由提交 Pull Request。冇嚴格規範。
+
 🇻🇳 Chào đón mọi đóng góp. Hãy thoải mái mở pull request với bất kỳ ý tưởng nào — tính năng mới, cải tiến, sửa lỗi hay thử nghiệm. Không có quy tắc nghiêm ngặt; nếu bạn có code mang ý tưởng, hãy đề xuất.
+
 🇮🇩 Kontribusi sangat disambut. Silakan buka pull request dengan ide apa pun — fitur baru, peningkatan, perbaikan bug, atau eksperimen. Tidak ada panduan ketat; jika kode Anda mengandung ide, ajukan saja.
 
 ---
