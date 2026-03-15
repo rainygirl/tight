@@ -182,18 +182,12 @@ R2 is used for avatar and image uploads. Without it, the upload feature will err
 
 ```bash
 npm run build
-node build/index.js
+npm start
 ```
 
-Or using the included `server.ts` (which starts both the HTTP server and the WebSocket server on the same port):
+`npm start` runs `node --env-file=.env build/index.js`. Place your `.env` in the project root (same directory where you run the command).
 
-```bash
-# Build first
-npm run build
-
-# Then start
-node server.js
-```
+> **Note:** All environment variables are loaded at runtime via `--env-file`. Nothing from `.env` is compiled into the build output, so the same build can be deployed to different environments by swapping `.env`.
 
 The WebSocket server attaches to the HTTP server and serves `/ws` in production (no separate port needed).
 
