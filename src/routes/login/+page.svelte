@@ -32,6 +32,10 @@
 			</svg>
 			{t('login.google')}
 		</button>
+		<div class="byline">
+			<a href="https://rainygirl.com" target="_blank" rel="noopener noreferrer">Made by rainygirl</a>
+			<a href="https://github.com/rainygirl/tight" target="_blank" rel="noopener noreferrer">github.com/rainygirl/tight</a>
+		</div>
 	</div>
 </div>
 
@@ -92,5 +96,23 @@
 	.google-btn:hover {
 		background: #f8f8f8;
 		border-color: #bbb;
+	}
+
+	.byline {
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
+		margin-top: 20px;
+	}
+
+	.byline a {
+		font-size: 12px;
+		color: #aaa;
+		text-decoration: none;
+	}
+
+	.byline a:hover {
+		color: #888;
+		text-decoration: underline;
 	}
 </style>
