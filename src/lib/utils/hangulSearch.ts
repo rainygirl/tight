@@ -126,8 +126,8 @@ export function matchKorean(query: string, text: string): boolean {
 	if (!text) return false;
 	try {
 		const pat = buildKoreanSearchPattern(query);
-		return pat ? new RegExp(pat).test(text) : text.includes(query);
+		return pat ? new RegExp(pat, 'i').test(text) : text.toLowerCase().includes(query.toLowerCase());
 	} catch {
-		return text.includes(query);
+		return text.toLowerCase().includes(query.toLowerCase());
 	}
 }

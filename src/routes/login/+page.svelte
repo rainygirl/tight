@@ -1,9 +1,6 @@
 <script lang="ts">
 	import { signIn } from '@auth/sveltekit/client';
 	import { t } from '$lib/i18n';
-	import type { PageData } from './$types';
-
-	let { data }: { data: PageData } = $props();
 </script>
 
 <div class="login-page">
@@ -96,6 +93,48 @@
 	.google-btn:hover {
 		background: #f8f8f8;
 		border-color: #bbb;
+	}
+
+	.demo-btn {
+		display: block;
+		width: 100%;
+		padding: 12px 20px;
+		background: #1d1c1d;
+		border: none;
+		border-radius: 8px;
+		font-size: 15px;
+		font-weight: 600;
+		color: #fff;
+		cursor: pointer;
+		transition: background 0.15s;
+		margin-bottom: 8px;
+	}
+
+	.demo-btn:hover {
+		background: #333;
+	}
+
+	.divider {
+		display: flex;
+		align-items: center;
+		gap: 12px;
+		margin: 12px 0;
+		color: #ccc;
+		font-size: 12px;
+	}
+
+	.divider::before,
+	.divider::after {
+		content: '';
+		flex: 1;
+		height: 1px;
+		background: #eee;
+	}
+
+	.demo-loading {
+		color: #616061;
+		font-size: 15px;
+		margin-top: 16px;
 	}
 
 	.byline {

@@ -1,5 +1,6 @@
 import { SvelteKitAuth } from '@auth/sveltekit';
 import Google from '@auth/sveltekit/providers/google';
+import Credentials from '@auth/core/providers/credentials';
 import { env } from '$env/dynamic/private';
 const { GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET } = env;
 import { db } from '$lib/db';
@@ -12,6 +13,14 @@ export const { handle, signIn, signOut } = SvelteKitAuth({
 		Google({
 			clientId: GOOGLE_CLIENT_ID,
 			clientSecret: GOOGLE_CLIENT_SECRET
+		}),
+		Credentials({
+			credentials: { userId: { type: 'text' } },
+			authorize(creds) {
+				if (env.DEMO_MODE !== 'true') return null;
+				const u = db.select().from(users).where(eq(users.id, String(creds.userId))).get();
+				return u ? { id: u.id, name: u.name, email: u.email, image: u.avatarUrl } : null;
+			}
 		})
 	],
 	callbacks: {

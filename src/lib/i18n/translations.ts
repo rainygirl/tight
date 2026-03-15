@@ -7,6 +7,8 @@ const t: Record<LangCode, Translations> = {
 		'login.welcome':     'Tight에 오신 것을 환영합니다',
 		'login.tagline':     '팀과 함께 소통하는 가장 간편한 방법',
 		'login.google':      'Google로 계속하기',
+		'login.demo':        '데모로 바로 시작하기',
+		'login.demoLoading': '데모 계정으로 접속 중...',
 
 		'setup.title':       '워크스페이스 만들기',
 		'setup.desc':        '팀을 위한 공간을 만들어 협업을 시작하세요.',
@@ -98,6 +100,8 @@ const t: Record<LangCode, Translations> = {
 		'login.welcome':     'Welcome to Tight',
 		'login.tagline':     'The simplest way to communicate with your team',
 		'login.google':      'Continue with Google',
+		'login.demo':        'Try Demo',
+		'login.demoLoading': 'Signing in as demo user...',
 
 		'setup.title':       'Create a workspace',
 		'setup.desc':        'Create a space for your team and start collaborating.',
@@ -189,6 +193,8 @@ const t: Record<LangCode, Translations> = {
 		'login.welcome':     'Bienvenido a Tight',
 		'login.tagline':     'La forma más sencilla de comunicarte con tu equipo',
 		'login.google':      'Continuar con Google',
+		'login.demo':        'Probar demo',
+		'login.demoLoading': 'Iniciando sesión como usuario demo...',
 
 		'setup.title':       'Crear un espacio de trabajo',
 		'setup.desc':        'Crea un espacio para tu equipo y empieza a colaborar.',
@@ -280,6 +286,8 @@ const t: Record<LangCode, Translations> = {
 		'login.welcome':     'Bienvenue sur Tight',
 		'login.tagline':     'La façon la plus simple de communiquer avec votre équipe',
 		'login.google':      'Continuer avec Google',
+		'login.demo':        'Essayer la démo',
+		'login.demoLoading': 'Connexion en tant que démo...',
 
 		'setup.title':       'Créer un espace de travail',
 		'setup.desc':        'Créez un espace pour votre équipe et commencez à collaborer.',
@@ -371,6 +379,8 @@ const t: Record<LangCode, Translations> = {
 		'login.welcome':     'Tight へようこそ',
 		'login.tagline':     'チームとのコミュニケーションをもっとシンプルに',
 		'login.google':      'Google で続ける',
+		'login.demo':        'デモを試す',
+		'login.demoLoading': 'デモユーザーでサインイン中...',
 
 		'setup.title':       'ワークスペースを作成',
 		'setup.desc':        'チームのスペースを作成してコラボレーションを始めましょう。',
@@ -462,6 +472,8 @@ const t: Record<LangCode, Translations> = {
 		'login.welcome':     '欢迎使用 Tight',
 		'login.tagline':     '与团队沟通的最简单方式',
 		'login.google':      '使用 Google 继续',
+		'login.demo':        '立即试用演示',
+		'login.demoLoading': '正在以演示账号登录...',
 
 		'setup.title':       '创建工作区',
 		'setup.desc':        '为您的团队创建空间，开始协作。',
@@ -553,6 +565,8 @@ const t: Record<LangCode, Translations> = {
 		'login.welcome':     '歡迎使用 Tight',
 		'login.tagline':     '與團隊溝通的最簡單方式',
 		'login.google':      '使用 Google 繼續',
+		'login.demo':        '立即試用示範',
+		'login.demoLoading': '正在以示範帳號登入...',
 
 		'setup.title':       '建立工作區',
 		'setup.desc':        '為您的團隊建立空間，開始協作。',
@@ -644,6 +658,8 @@ const t: Record<LangCode, Translations> = {
 		'login.welcome':     '歡迎使用 Tight',
 		'login.tagline':     '同團隊溝通嘅最簡便方法',
 		'login.google':      '用 Google 繼續',
+		'login.demo':        '即刻試用 Demo',
+		'login.demoLoading': '正用 Demo 帳號登入...',
 
 		'setup.title':       '創建工作區',
 		'setup.desc':        '為你嘅團隊創建空間，開始協作。',
@@ -735,6 +751,8 @@ const t: Record<LangCode, Translations> = {
 		'login.welcome':     'Chào mừng đến với Tight',
 		'login.tagline':     'Cách đơn giản nhất để giao tiếp với nhóm của bạn',
 		'login.google':      'Tiếp tục với Google',
+		'login.demo':        'Dùng thử bản demo',
+		'login.demoLoading': 'Đang đăng nhập tài khoản demo...',
 
 		'setup.title':       'Tạo không gian làm việc',
 		'setup.desc':        'Tạo không gian cho nhóm của bạn và bắt đầu cộng tác.',
@@ -826,6 +844,8 @@ const t: Record<LangCode, Translations> = {
 		'login.welcome':     'Selamat datang di Tight',
 		'login.tagline':     'Cara paling mudah berkomunikasi dengan tim Anda',
 		'login.google':      'Lanjutkan dengan Google',
+		'login.demo':        'Coba demo sekarang',
+		'login.demoLoading': 'Masuk sebagai akun demo...',
 
 		'setup.title':       'Buat ruang kerja',
 		'setup.desc':        'Buat ruang untuk tim Anda dan mulai berkolaborasi.',
