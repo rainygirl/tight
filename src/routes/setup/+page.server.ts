@@ -1,4 +1,5 @@
 import { redirect, fail } from '@sveltejs/kit';
+import { env } from '$env/dynamic/private';
 import { db } from '$lib/db';
 import { users, workspaces, workspaceMembers, channels, channelMembers } from '$lib/db/schema';
 import { eq } from 'drizzle-orm';
@@ -20,6 +21,7 @@ function slugify(str: string) {
 export const load: PageServerLoad = async (event) => {
 	const session = await event.locals.auth();
 	if (!session?.user) redirect(302, '/login');
+	if (env.DEMO_MODE === 'true') redirect(302, '/');
 	return {};
 };
 
